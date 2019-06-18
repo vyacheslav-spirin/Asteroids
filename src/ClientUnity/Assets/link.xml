@@ -1,0 +1,5 @@
+<linker>
+	<assembly fullname="Math" preserve="all"/>
+	<assembly fullname="Game" preserve="all"/>
+	<assembly fullname="Game.Unity" preserve="all"/>
+</linker>

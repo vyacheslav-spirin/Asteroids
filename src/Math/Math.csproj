@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\..\bin\$(Configuration)</OutputPath>
+    <RootNamespace>Asteroids.Math</RootNamespace>
+  </PropertyGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;$(SolutionDir)src\ClientUnity\Assets\Plugins\$(TargetFileName)&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(SolutionDir)src\ClientUnity\Assets\Plugins\$(TargetName).pdb&quot;" />
+  </Target>
+</Project>
